@@ -6,8 +6,8 @@
       "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
     },
     {
-      "name": "React Router",
-      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
+      "name": "pretty",
+      "description": "please",
       "id": 2
     }
   ],
@@ -48,6 +48,247 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 1,
+      "frontTextarea": "My name is Mercy ",
+      "backTextarea": "My last name is Akindele",
+      "id": 8
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 1,
+      "id": 9
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 1,
+      "frontTextarea": "This is Merfcy ",
+      "backTextarea": "This is Nora",
+      "id": 10
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 11
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 12
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 13
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 14
+    },
+    {
+      "front": "pretty girl",
+      "back": "girl card",
+      "deckId": 2,
+      "id": 15
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 16
+    },
+    {
+      "front": "I hope it resets",
+      "back": "to the initial setting",
+      "deckId": 2,
+      "id": 17
+    },
+    {
+      "front": "bb",
+      "back": "cc",
+      "deckId": 2,
+      "id": 18
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 19
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 20
+    },
+    {
+      "front": "jh",
+      "back": "lio",
+      "deckId": 1,
+      "id": 21
+    },
+    {
+      "front": "twg",
+      "back": "wgwtw",
+      "deckId": 1,
+      "id": 22
+    },
+    {
+      "front": "i hope this adds",
+      "back": "something",
+      "deckId": 2,
+      "id": 23
+    },
+    {
+      "front": "i hope to add to",
+      "back": "this card",
+      "deckId": 2,
+      "id": 24
+    },
+    {
+      "front": "gag",
+      "back": "fhl",
+      "deckId": null,
+      "id": 25
+    },
+    {
+      "front": "jkk",
+      "back": "lol",
+      "deckId": 2,
+      "id": 26
+    },
+    {
+      "front": "give me",
+      "back": "something good",
+      "deckId": 2,
+      "id": 27
+    },
+    {
+      "front": "lknln",
+      "back": "lkoj]\n",
+      "deckId": 2,
+      "id": 28
+    },
+    {
+      "front": "mnkjn",
+      "back": "kknnnnnnnnnnnnnn",
+      "deckId": 2,
+      "id": 29
+    },
+    {
+      "front": "mmmmmmmmmmmmm",
+      "back": "lllllllllllllllllllllll",
+      "deckId": 2,
+      "id": 30
+    },
+    {
+      "initialFormState": {
+        "front": "",
+        "back": "",
+        "deckId": "2"
+      },
+      "deckId": 2,
+      "id": 31
+    },
+    {
+      "front": "yooo",
+      "back": "butt",
+      "deckId": 2,
+      "id": 32
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 33
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 34
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 35
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 36
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 37
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 38
+    },
+    {
+      "front": "testing",
+      "back": "testing",
+      "deckId": 2,
+      "id": 39
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 40
+    },
+    {
+      "front": "test1",
+      "back": "test1",
+      "deckId": 2,
+      "id": 41
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 42
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 43
+    },
+    {
+      "front": "",
+      "back": "",
+      "deckId": 2,
+      "id": 44
+    },
+    {
+      "front": "12",
+      "back": "12",
+      "deckId": 2,
+      "id": 45
+    },
+    {
+      "front": "test",
+      "back": "test",
+      "deckId": 2,
+      "id": 46
     }
   ]
 }

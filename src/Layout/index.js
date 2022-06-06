@@ -3,10 +3,11 @@ import {Switch, Route} from "react-router-dom";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import Home from "../Home/Home";
-import Deck from "../Decks/DeckItem";
+import Deck from "../Decks/Deck";
 import CreateDeck from "../Create/CreateDeck";
 import Study from "../Study/Study";
 import DeckItem from "../Decks/DeckItem";
+import EditDeck from "../Create/EditDeck";
 
 function Layout() {
   return (
@@ -24,8 +25,15 @@ function Layout() {
           <Route path="/decks/new">
             <CreateDeck/>
           </Route>
+          <Route path="/decks/:deckId/edit">
+            <EditDeck/>
+          </Route>
+
           <Route path="/decks/:deckId/cards/new">
-            <Deck/>
+            <DeckItem/>
+          </Route>
+          <Route path="/decks/:deckId">
+            <Deck />
           </Route>
           <Route>
             <NotFound />
