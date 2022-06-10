@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react"
-import { Link, useParams } from "react-router-dom";
-import { readDeck } from "../utils/api";
+import { Link, useParams,useHistory } from "react-router-dom";
+import { readDeck, deleteDeck,readCard, deleteCard } from "../utils/api";
 
 export default function Deck(){
     const {deckId} = useParams();
     const[deck, setDeck]=useState({})
+
     
 
     useEffect(() => {
@@ -13,17 +14,45 @@ export default function Deck(){
             let response = await readDeck(deckId)
             console.log("response id ", response);
             setDeck(response)
-             console.log("end of loadDeck", deck);
+            //  console.log("end of loadDeck", deck);
         } 
         getTheDeck();
     },[deckId])
+    
+    const history = useHistory();
     console.log("this is the cool deck list",deck)
+    const deleteWarnHandler = async (deckId) => {
+        const wantToDelete = window.confirm(
+          `Delete deck ID ${deckId}? You will not be able to recover it.`
+        );
+        if (wantToDelete) {
+  
+          async function deleteTheDeck() {
+            console.log("deckID",deckId)
+            try {
+            //  console.log(deckId)
+              await deleteDeck(deckId);
+            setDeck(null)
+            history.push("/");
+            } catch (error) {
+              if (error.name === "AbortError") {
+                // Ignore `AbortError`
+                console.log("Aborted");
+              } else {
+                throw error;
+              }
+            }
+          }
+          deleteTheDeck();
+        }
+      };
+
     if(deck && deck.cards){
         return(
             <>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="#">Home</a></li>
+                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
                     <li className="breadcrumb-item active" aria-current="page">{deck.name}</li>
                     </ol>
             </nav>
@@ -37,7 +66,7 @@ export default function Deck(){
                 <Link to={`/decks/${deck.id}/edit`}> <button type="button" className="btn btn-primary">Edit</button></Link>
                 <Link to={`/decks/${deck.id}/study`}><button type="button" className="btn btn-primary">Study</button></Link>
                 <Link to={`/decks/${deck.id}/cards/new`}><button type="button" className="btn btn-primary">Add Cards</button></Link>
-                <button>Delete</button>
+                <button onClick={() => deleteWarnHandler(deck.id)}>Delete</button>
             </div>
             <h4>Cards</h4>
              {deck.cards.map((card) => {
@@ -65,11 +94,7 @@ export default function Deck(){
             </>
         )
     }else{
-        return(
-        <>
-            <p>Loading chicken...</p>
-        </>
-        )
+        return null;
     }
         
     

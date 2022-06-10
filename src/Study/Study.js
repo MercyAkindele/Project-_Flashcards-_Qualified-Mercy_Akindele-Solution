@@ -23,7 +23,7 @@ export default function Study(){
             let response = await readDeck(deckId)
             console.log("response id ", response);
             setDeck(response)
-             console.log("end of loadDeck", deck);
+            //  console.log("end of loadDeck", deck);
         } 
         loadDeck();
     },[deckId])
