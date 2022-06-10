@@ -1,10 +1,14 @@
 import React, {useEffect, useState} from "react"
 import { Link, useParams,useHistory } from "react-router-dom";
-import { readDeck, deleteDeck,readCard, deleteCard } from "../utils/api";
+import { readDeck, deleteDeck,deleteCard } from "../utils/api";
 
 export default function Deck(){
     const {deckId} = useParams();
     const[deck, setDeck]=useState({})
+
+    // deck = { cards: [1,2,3] }
+    // delete card 2
+    // 
 
     
 
@@ -46,6 +50,26 @@ export default function Deck(){
           deleteTheDeck();
         }
       };
+      const deleteCardHandler = async(cardId) =>{
+          const wantToDeleteCard = window.confirm(`Delete this card? You will not be able to recover it.`)
+          if(wantToDeleteCard){
+              async function putInInfoToDelete(){
+                await deleteCard(cardId)
+                const getDeletedCardOut= deck.cards.filter((card)=>{
+                    return card !== cardId
+                })
+                console.log("deck.cards is", deck.cards);
+                console.log("getDeletedCardOut is", getDeletedCardOut);
+                console.log("calling setDeck with", {...deck, cards: getDeletedCardOut});
+                setDeck({...deck, cards: getDeletedCardOut})
+              } 
+              putInInfoToDelete();
+            //   need new filtered cards array
+            // update state with new filtered cards
+            // replace deck.cards with the new filtered cards
+
+          }
+      }
 
     if(deck && deck.cards){
         return(
@@ -71,9 +95,7 @@ export default function Deck(){
             <h4>Cards</h4>
              {deck.cards.map((card) => {
             return(
-                <>
-                {console.log("This is the card id",card.id)}
-                <div className="row">
+                <div className="row" key={card.id}>
                     <div className="col-sm-6">
                         <div className="card">
                             <div className="card-body">
@@ -84,11 +106,10 @@ export default function Deck(){
 
                             </div>
                             <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}><button className="btn btn-secondary">Edit</button></Link>
-                            <button className="btn btn-danger">Delete</button>
+                            <button className="btn btn-danger" onClick={() => deleteCardHandler(card.id)}>Delete</button>
                         </div>
                     </div>
                 </div>
-                </>
             )
         })} 
             </>

@@ -59,7 +59,7 @@ if(decks){
                         <div className="card-body" key={deck.id}>
                             <h4 className="card-title">{deck.name}</h4>
                             <p className="">{deck.description}</p>
-                            <p>{deck.cards.length}cards</p>
+                            <p>{deck.cards.length} cards</p>
                             <Link to={`/decks/${deck.id}/study`}><button type="button" className="btn btn-primary"> Study</button></Link>
                             <Link to={`/decks/${deck.id}`}><button type="button" className="btn btn-secondary"> View</button></Link>
                             <button type="button" className="btn btn-secondary" onClick={() =>deleteWarnHandler(deck.id)}> Delete</button>

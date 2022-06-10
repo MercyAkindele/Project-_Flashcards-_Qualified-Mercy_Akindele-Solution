@@ -64,7 +64,7 @@ export default function Study(){
                         <li className="breadcrumb-item active" aria-current="page">{deck.name}/ Study</li>
                     </ol>
                 </nav>
-                <h1>Study: {deck.name}</h1>
+                <h1>{deck.name}</h1>
                 <div className= "card" style={{ width: "18rem" }}>
                 
                     <div className="card-body">
@@ -90,7 +90,7 @@ export default function Study(){
                         <li className="breadcrumb-item active" aria-current="page">{deck.name}/ Study</li>
                     </ol>
                 </nav>
-                <h1>Study: {deck.name}</h1>
+                <h1>{deck.name}</h1>
                 <div className= "card" style={{ width: "18rem" }}>
                     <div className="card-body">
                         <h4>Not Enough Cards.</h4>

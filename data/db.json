@@ -1,8 +1,8 @@
 {
   "decks": [
     {
-      "name": "deck 1",
-      "description": "Description of deck 1",
+      "name": "deck 1adlkvnh",
+      "description": "Description of deck 1av?<f",
       "id": 3
     },
     {
@@ -17,24 +17,6 @@
       "back": "Back of card 1",
       "deckId": 3,
       "id": 6
-    },
-    {
-      "front": "Front of card 2",
-      "back": "Back of card 2",
-      "deckId": 3,
-      "id": 7
-    },
-    {
-      "front": "Front of card 3",
-      "back": "Back of card 3",
-      "deckId": 3,
-      "id": 8
-    },
-    {
-      "front": "Front of side 4",
-      "back": "Back of side 4",
-      "deckId": 3,
-      "id": 9
     },
     {
       "front": "Front card 1 remind",

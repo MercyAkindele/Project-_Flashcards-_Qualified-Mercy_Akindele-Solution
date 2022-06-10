@@ -54,13 +54,13 @@ export default function EditDeck(){
             <div className="form-group">
             <label htmlFor="controlInput1">Name</label>
             <input type="text" className="editDeckName" name="name" id="name" 
-            placeholder="Deck Name" onChange={inputHandler}/>
+            placeholder="Deck Name" onChange={inputHandler} value={deck.name}/>
             
         </div>
         <div className="form-group">
             <label htmlFor="textarea1">Description</label>
             <textarea className="form-control" name="description" id="description" rows="3"
-            placeholder="Brief description of the deck" onChange={inputHandler}></textarea>
+            placeholder="Brief description of the deck" onChange={inputHandler} value={deck.description}></textarea>
             
         </div>
         <Link to={`/decks/${deckId}`} ><button className="btn btn-secondary" type="cancel" >Cancel</button></Link> 

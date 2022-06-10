@@ -47,12 +47,12 @@ export default function CreateDeck(){
     <form onSubmit={createDeckHandler}>
         <h1>Create Deck</h1>
         <div className="form-group">
-            <label for="controlInput1">Name</label>
+            <label htmlFor="controlInput1">Name</label>
             <input type="text" className="form-control" id="name" name="name"  
             placeholder="Deck Name" value={formData.name} onChange={inputHandler}/>
         </div>
         <div className="form-group">
-            <label for="textarea1">Description</label>
+            <label htmlFor="textarea1">Description</label>
             <textarea className="form-control" id="description" name="description"  rows="3" 
             placeholder="Brief description of the deck" value={formData.description} onChange={inputHandler}></textarea>
         </div>
