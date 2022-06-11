@@ -1,34 +1,46 @@
 {
   "decks": [
     {
-      "name": "deck 1adlkvnh",
-      "description": "Description of deck 1av?<f",
+      "name": "Rendering in React!",
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation!",
       "id": 3
     },
     {
-      "name": "Deck 2",
-      "description": "Deck 2 description",
+      "name": "React Router",
+      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 4
     }
   ],
   "cards": [
     {
-      "front": "Front of card 1",
-      "back": "Back of card 1",
+      "front": "Differentiate between Real DOM and Virtual DOM!",
+      "back": "Virtual DOM updates are faster but do not directly update the HTML!",
       "deckId": 3,
       "id": 6
     },
     {
-      "front": "Front card 1 remind",
-      "back": "Back card 1 yourself",
+      "front": "What path will match the follow Route? <Route><NotFound/><Route>",
+      "back": "All paths. A route with no path matches all URL's",
       "deckId": 4,
       "id": 10
     },
     {
-      "front": "Front card 2 did it work",
-      "back": "Back card 2 yes it did",
+      "front": "What does <Switch> do?",
+      "back": "Renders the first matching child <Route>",
       "deckId": 4,
       "id": 11
+    },
+    {
+      "front": "This is the front side of the card ",
+      "back": "This is the back side of the card",
+      "deckId": 3,
+      "id": 12
+    },
+    {
+      "front": "This is the front of another card",
+      "back": "This is the back of another card",
+      "deckId": 3,
+      "id": 13
     }
   ]
 }
