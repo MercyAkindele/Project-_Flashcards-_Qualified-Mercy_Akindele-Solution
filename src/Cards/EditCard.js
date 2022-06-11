@@ -38,15 +38,31 @@ export default function EditCard() {
 
   useEffect(() => {
     async function getTheDeckToGetCards() {
-      const decksInfo = await readDeck(deckId);
-      setDecks(decksInfo);
+      try{
+        const decksInfo = await readDeck(deckId);
+        setDecks(decksInfo);
+      }catch(error){
+        if(error.name === "AbortError"){
+          console.log("Aborted")
+        }else{
+          throw error;
+        }
+      }
     }
     getTheDeckToGetCards();
   }, [deckId]);
   useEffect(() => {
     async function readCardInfo() {
-      const cardInfo = await readCard(cardId);
-      setFormData(cardInfo);
+      try{
+        const cardInfo = await readCard(cardId);
+        setFormData(cardInfo);
+      }catch(error){
+        if(error.name === "AbortError"){
+          console.log("Aborted")
+        }else{
+          throw error;
+        }
+      }
     }
     readCardInfo();
   }, [cardId]);

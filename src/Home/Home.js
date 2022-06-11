@@ -9,8 +9,16 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchDecks() {
-      const data = await listDecks();
-      setDecks(data);
+      try{
+        const data = await listDecks();
+        setDecks(data);
+      }catch(error){
+        if(error.name === "AbortError"){
+          console.log("Aborted")
+        }else{
+          throw error;
+        }
+      }
     }
     fetchDecks();
   }, []);
@@ -44,7 +52,7 @@ export default function Home() {
         <div>
           <Link to="/decks/new">
             <button type="button" className="btn btn-secondary ml-5">
-              <i class="fa fa-plus" aria-hidden="true"></i> Create Deck
+              <i className="fa fa-plus" aria-hidden="true"></i> Create Deck
             </button>
           </Link>
         </div>
@@ -58,13 +66,13 @@ export default function Home() {
                   <p>{deck.cards.length} cards</p>
                   <Link to={`/decks/${deck.id}/study`}>
                     <button type="button" className="btn btn-primary mr-2">
-                      <i class="fa fa-book" aria-hidden="true"></i> Study
+                      <i className="fa fa-book" aria-hidden="true"></i> Study
                     </button>
                   </Link>
                   <Link to={`/decks/${deck.id}`}>
                     <button type="button" className="btn btn-secondary mr-2">
                       {" "}
-                      <i class="fa fa-eye" aria-hidden="true"></i> View
+                      <i className="fa fa-eye" aria-hidden="true"></i> View
                     </button>
                   </Link>
                   <button
@@ -72,7 +80,7 @@ export default function Home() {
                     className="btn btn-danger ml-5"
                     onClick={() => deleteWarnHandler(deck.id)}
                   >
-                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <i className="fa fa-trash" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>

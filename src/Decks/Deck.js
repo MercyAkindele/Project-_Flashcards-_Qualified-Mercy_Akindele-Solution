@@ -10,9 +10,17 @@ export default function Deck() {
 
   useEffect(() => {
     async function getTheDeck() {
-      let response = await readDeck(deckId);
+      try{
+        let response = await readDeck(deckId);
 
-      setDeck(response);
+        setDeck(response);
+      }catch(error){
+        if(error.name === "AbortError"){
+          console.log("Aborted")
+        }else{
+          throw error;
+        }
+      }
     }
     getTheDeck();
   }, [deckId]);
@@ -46,12 +54,20 @@ export default function Deck() {
     );
     if (wantToDeleteCard) {
       async function putInInfoToDelete() {
-        await deleteCard(cardId);
-        const getDeletedCardOut = deck.cards.filter((card) => {
-          return card.id !== cardId;
-        });
-
-        setDeck({ ...deck, cards: getDeletedCardOut });
+        try{
+          await deleteCard(cardId);
+          const getDeletedCardOut = deck.cards.filter((card) => {
+            return card.id !== cardId;
+          });
+  
+          setDeck({ ...deck, cards: getDeletedCardOut });
+        }catch(error){
+          if(error.name === "AbortError"){
+            console.log("Aborted")
+          }else{
+            throw error;
+          }
+        }
       }
       putInInfoToDelete();
       //   need new filtered cards array
@@ -105,7 +121,7 @@ export default function Deck() {
         <h4>Cards</h4>
         {deck.cards.map((card) => {
           return (
-            <div className="card mt-2">
+            <div className="card mt-2" key={card.id}>
               <div className="card-body" key={card.id}>
                 <div className="row">
                   <div className="col-sm-3 col-md-3 col-lg-2">

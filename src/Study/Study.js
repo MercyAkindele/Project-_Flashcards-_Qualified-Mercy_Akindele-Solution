@@ -15,8 +15,16 @@ export default function Study() {
   }
   useEffect(() => {
     async function loadDeck() {
-      let response = await readDeck(deckId);
-      setDeck(response);
+      try{
+        let response = await readDeck(deckId);
+        setDeck(response);
+      }catch(error){
+        if(error.name === "AbortError"){
+          console.log(error)
+        }else{
+          throw error;
+        }
+      }
     }
     loadDeck();
   }, [deckId]);
@@ -104,7 +112,7 @@ export default function Study() {
             <p>{`You need at least 3 cards to study. There are ${deck.cards.length} cards in this deck.`}</p>
             <Link to={`/decks/${deck.id}/cards/new`}>
               <button type="button" className="btn btn-primary ">
-                <i class="fa fa-plus" aria-hidden="true"></i> Add Cards
+                <i className="fa fa-plus" aria-hidden="true"></i> Add Cards
               </button>
             </Link>
           </div>

@@ -31,8 +31,16 @@ export default function EditDeck() {
 
   useEffect(() => {
     async function getDeck() {
+     try{
       const response = await readDeck(deckId);
       setDeck(response);
+     }catch(error){
+       if(error.name === "AbortError"){
+         console.log("Aborted");
+       }else{
+         throw error;
+       }
+     }
     }
     getDeck();
   }, [deckId]);
