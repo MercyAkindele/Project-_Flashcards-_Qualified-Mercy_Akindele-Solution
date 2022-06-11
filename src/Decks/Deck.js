@@ -31,7 +31,7 @@ export default function Deck() {
           history.push("/");
         } catch (error) {
           if (error.name === "AbortError") {
-            
+            console.log("Aborted")
           } else {
             throw error;
           }

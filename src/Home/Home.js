@@ -29,6 +29,7 @@ export default function Home() {
           setDecks(getRidOfDeletedDeck);
         } catch (error) {
           if (error.name === "AbortError") {
+            console.log("Aborted")
           } else {
             throw error;
           }

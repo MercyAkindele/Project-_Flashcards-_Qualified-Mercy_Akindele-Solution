@@ -21,6 +21,7 @@ export default function DeckItem() {
         setFormData(initialFormState);
       } catch (error) {
         if (error.name === "AbortError") {
+          console.log("Aborted")
         } else {
           throw error;
         }
@@ -37,6 +38,7 @@ export default function DeckItem() {
         setDeck(response);
       } catch (error) {
         if (error.name === "AbortError") {
+          console.log("Aborted")
         } else {
           throw error;
         }
