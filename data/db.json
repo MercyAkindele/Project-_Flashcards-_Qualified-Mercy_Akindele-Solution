@@ -41,6 +41,18 @@
       "back": "This is the back of another card",
       "deckId": 3,
       "id": 13
+    },
+    {
+      "front": "test new component",
+      "back": "moment of truth",
+      "deckId": 3,
+      "id": 14
+    },
+    {
+      "front": "test 456",
+      "back": "test 123",
+      "deckId": 3,
+      "id": 15
     }
   ]
 }

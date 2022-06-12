@@ -15,13 +15,13 @@ export default function Study() {
   }
   useEffect(() => {
     async function loadDeck() {
-      try{
+      try {
         let response = await readDeck(deckId);
         setDeck(response);
-      }catch(error){
-        if(error.name === "AbortError"){
-          console.log(error)
-        }else{
+      } catch (error) {
+        if (error.name === "AbortError") {
+          console.log(error);
+        } else {
           throw error;
         }
       }
@@ -57,12 +57,15 @@ export default function Study() {
                 <i className="fa-solid fa-house"></i> Home
               </Link>
             </li>
+            <Link to={`decks/${deck.id}`}>
+              <li className="breadcrumb-item">{deck.name}</li>
+            </Link>
             <li className="breadcrumb-item active" aria-current="page">
-              {deck.name}/ Study
+              Study
             </li>
           </ol>
         </nav>
-        <h1>{deck.name}</h1>
+        <h1>Study: {deck.name}</h1>
         <div className="card w-75">
           <div className="card-body">
             <h4 className="card-title">
@@ -100,12 +103,15 @@ export default function Study() {
                 <i className="fa-solid fa-house"></i> Home
               </Link>
             </li>
+            <Link to={`decks/${deck.id}`}>
+              <li className="breadcrumb-item">{deck.name}</li>
+            </Link>
             <li className="breadcrumb-item active" aria-current="page">
-              {deck.name}/ Study
+              Study
             </li>
           </ol>
         </nav>
-        <h1>{deck.name}</h1>
+        <h1>Study: {deck.name}</h1>
         <div className="card w-75">
           <div className="card-body">
             <h4>Not Enough Cards.</h4>
